@@ -10,7 +10,7 @@
     'category': 'Website',
     'summary': "Website FAQs",
 
-    'version': '13.0.1',
+    'version': '14.0.1',
     'description': """
 Website FAQs
 ==================
