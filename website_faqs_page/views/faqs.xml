@@ -1,0 +1,96 @@
+<odoo>
+
+    <template id="faqs_template" name="FAQs">
+        <t t-call="website.layout">
+            <div class="oe_structure"/>
+            <section>
+                <div class="container faq_title">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="headings">
+                                <span class="hr"></span>
+                                <h2 class="title">Frequently Asked Questions</h2>
+                                <span class="hr"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <div class="oe_structure"/>
+
+            <div class="container pt32 pb64">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <t t-foreach="faqs" t-as="faq">
+                        <div class="panel panel-default border">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title mb0">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                       t-attf-href="#collapseOne#{faq.id}"
+                                       aria-expanded="false" aria-controls="collapseOne">
+                                        <t t-esc="faq.question"/>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div t-attf-id="collapseOne#{faq.id}" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne">
+                                <div class="panel-body px-3 py-2">
+                                    <t t-raw="faq.answer"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+                    <!--
+                    <div class="panel panel-default border">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Collapsible Group Item #2
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                                raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                                sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default border">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+                                raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+                                sustainable VHS.
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
